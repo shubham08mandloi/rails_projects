@@ -1,0 +1,29 @@
+<%= link_to "Create", new_company_path %>
+<br>
+<table>
+  <tr>
+  	<th>No.</th>
+    <th>company Name</th>
+    <th>project</th>
+    <th>Total project</th>
+    <th>employees</th>
+    <th>Total employee</th>
+  </tr>
+  <% @companys.each_with_index do |company,i| %>
+  <tr>
+  	<td><%= i+1 %>.</td>
+    <td><%= company.company_name %></td>
+    <td><%= company.projects.pluck(:project_name).join(', ') %></td>
+    <td><%=  company.projects.count %></td>
+    <td><%=  company.employees.pluck(:employee_name).join(', ') %></td>
+    <td><%=  company.employees.count %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<style type="text/css">
+	table, th, td {
+	  border: 1px solid black;
+	}
+</style>

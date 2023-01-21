@@ -1,0 +1,20 @@
+<%= link_to "Create project", new_project_path %>
+<br>
+<%= link_to "Create company", companys_path %>
+<br>
+<%= link_to "Create", new_employee_path %>
+<br>
+<%= link_to "company List", companys_path %>
+<br>
+
+<% @employees.each_with_index do |emp,i| %>
+<%= i+1 %>.<%= emp.employee_name %>
+<%=  emp.company.company_name %>
+<br>
+<%= link_to "show", employee_path(emp) %>
+<br>
+<%= link_to "Edit",  edit_employee_path(emp)%>
+<br>
+<%= link_to "Delete", employee_path(emp), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }   %>
+<br>
+<% end %>

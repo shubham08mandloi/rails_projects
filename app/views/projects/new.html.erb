@@ -1,0 +1,6 @@
+<%= form_for @projects, url: projects_path do |f| %>
+<%= f.label :project_name %>
+<%= f.text_field :project_name %>
+<br>
+<%= f.submit :submit %>
+<% end %>

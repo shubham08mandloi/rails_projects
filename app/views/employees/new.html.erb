@@ -1,0 +1,6 @@
+<%= form_for @employees, url: employees_path do |f| %>
+<%= f.label :employee_name %>
+<%= f.text_field :employee_name %>
+<br>
+<%= f.submit :submit %>
+<% end %>
